@@ -25,5 +25,5 @@ MonoBehaviour:
       m_GuidHigh: 15808506547789482392
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: XRImageTracking
+    m_Name: XR
     m_Texture: {fileID: 0}
