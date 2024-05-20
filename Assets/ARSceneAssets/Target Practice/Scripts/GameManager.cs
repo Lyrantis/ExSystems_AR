@@ -41,8 +41,7 @@ public class GameManager : MonoBehaviour
         EndGame();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         scoreSystem = gameObject.GetComponent<ScoreSystem>();
 
