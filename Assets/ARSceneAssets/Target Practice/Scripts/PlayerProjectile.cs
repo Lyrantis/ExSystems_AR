@@ -8,9 +8,8 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Target"))
         {
-            //AddPoints
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             Destroy(this);
         }
     }

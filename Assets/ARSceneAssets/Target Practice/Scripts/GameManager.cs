@@ -10,19 +10,21 @@ public class GameManager : MonoBehaviour
     private TargetSpawner spawner;
     public int GameStartCountdown;
     public int GameDuration;
-    public GameObject countdownText;
-    public GameObject timerText;
+    public TMP_Text countdownText;
+    public TMP_Text timerText;
     public GameObject CountdownPanel;
     public GameObject GameOverPanel;
 
     IEnumerator GameCountdown()
     {
-        for (int i = 0; i < GameStartCountdown; i++)
+        for (int i = 0; i < GameStartCountdown + 1; i++)
         {
+            countdownText.text = (GameStartCountdown - i).ToString();
             yield return new WaitForSeconds(1.0f);
-            countdownText.GetComponent<TextMeshPro>().text = (GameStartCountdown - i).ToString();
         }
+
         CountdownPanel.SetActive(false);
+        timerText.gameObject.SetActive(true);
 
         spawner.StartGame();
         scoreSystem.StartGame();
@@ -34,8 +36,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < GameDuration; i++)
         {
+            timerText.text = (GameDuration - i).ToString();
             yield return new WaitForSeconds(1.0f);
-            timerText.GetComponent<TextMeshPro>().text = (GameDuration - i).ToString();
         }
 
         EndGame();
@@ -52,13 +54,13 @@ public class GameManager : MonoBehaviour
 
         spawner = gameObject.GetComponent<TargetSpawner>();
 
-        if (spawner == null)
+        if (spawner == null) 
         {
             Debug.Log("Error: No Target Spawner Attached");
         }
 
         GameOverPanel.SetActive(false);
-        timerText.SetActive(false);
+        timerText.gameObject.SetActive(false);
         spawner.TargetDestroyed += AddPoints;
 
         StartCoroutine(GameCountdown());

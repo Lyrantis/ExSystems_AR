@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45da5d9e677c204f84eac28834b18a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 1329078565286835491, guid: 199884fdc86746b4689f6639d6a1c18d,
+  _projectilePrefab: {fileID: 538818013060054234, guid: 199884fdc86746b4689f6639d6a1c18d,
     type: 3}
 --- !u!114 &106533405
 MonoBehaviour:
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae00c8419afe7d9478b567829215509f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1208405369}
+  scoreText: {fileID: 1208405371}
 --- !u!114 &383342235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,8 +831,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxTargets: 5
   TimeBetweenSpawns: 5
-  TargetsPerSpawn: 1
-  TargetToSpawn: {fileID: 7842763232739242838, guid: 9f7773a023503ba489e2d52dd44e4ec1,
+  TargetsPerSpawn: 3
+  TargetToSpawn: {fileID: 9149208805223366628, guid: 9f7773a023503ba489e2d52dd44e4ec1,
     type: 3}
 --- !u!114 &383342236
 MonoBehaviour:
@@ -848,8 +848,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameStartCountdown: 5
   GameDuration: 120
-  countdownText: {fileID: 2019405440}
-  timerText: {fileID: 413949856}
+  countdownText: {fileID: 2019405442}
+  timerText: {fileID: 413949858}
   CountdownPanel: {fileID: 1180794081}
   GameOverPanel: {fileID: 1549254806}
 --- !u!4 &383342237
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 383342233}
         m_TargetAssemblyTypeName: OpenScenes, Assembly-CSharp
         m_MethodName: OpenSceneByIndex
         m_Mode: 3
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 383342233}
         m_TargetAssemblyTypeName: OpenScenes, Assembly-CSharp
         m_MethodName: OpenSceneByIndex
         m_Mode: 3
@@ -1283,7 +1283,6 @@ GameObject:
   - component: {fileID: 1136739813}
   - component: {fileID: 1136739812}
   - component: {fileID: 1136739817}
-  - component: {fileID: 1136739816}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1378,36 +1377,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1136739816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136739811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1136739817
 CanvasRenderer:
   m_ObjectHideFlags: 0

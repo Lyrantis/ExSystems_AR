@@ -17,13 +17,13 @@ public class TargetSpawner : MonoBehaviour
     {
         for (int i = 0; i < TargetsPerSpawn; i++)
         {
-            if (activeTargets.Count < MaxTargets)
+            if (activeTargets.Count < MaxTargets && Application.isPlaying)
             {
                 GameObject temp = Instantiate(TargetToSpawn);
-                Vector3 randomDirectionToSpawn = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-0.5f, 1.0f));
+                Vector3 randomDirectionToSpawn = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
                 float randomDistance = UnityEngine.Random.Range(0.0f, 1.0f);
                 Vector3 facingDIrection = -randomDirectionToSpawn.normalized;
-                randomDirectionToSpawn = randomDirectionToSpawn.normalized * randomDistance;
+                randomDirectionToSpawn = randomDirectionToSpawn.normalized * 2;
                 temp.transform.position = randomDirectionToSpawn;
                 temp.transform.LookAt(new Vector3(0, 0, 0));
                 temp.GetComponent<Target>().OnDeath += HandleTargetDestroyed;
@@ -33,13 +33,12 @@ public class TargetSpawner : MonoBehaviour
     }
     public void StartGame()
     {
+        activeTargets = new List<GameObject>();
         SpawnTargetWave();
     }
 
     public void EndGame()
     {
-        StopAllCoroutines();
-
         foreach (GameObject target in activeTargets)
         {
             target.GetComponent<Target>().OnDeath -= HandleTargetDestroyed;

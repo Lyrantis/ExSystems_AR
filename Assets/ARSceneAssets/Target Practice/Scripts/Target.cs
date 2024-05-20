@@ -10,6 +10,6 @@ public class Target : MonoBehaviour
     public event Action<GameObject, int> OnDeath;
     private void OnDestroy()
     {
-        OnDeath.Invoke(this.gameObject, points);
+        OnDeath.Invoke(gameObject, points);
     }
 }
