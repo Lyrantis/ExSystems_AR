@@ -8,8 +8,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Target"))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<Target>().OnHit();
             Destroy(this);
         }
     }

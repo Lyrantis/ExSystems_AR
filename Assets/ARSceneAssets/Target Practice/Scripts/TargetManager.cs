@@ -20,10 +20,10 @@ public class TargetSpawner : MonoBehaviour
             if (activeTargets.Count < MaxTargets && Application.isPlaying)
             {
                 GameObject temp = Instantiate(TargetToSpawn);
-                Vector3 randomDirectionToSpawn = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
-                float randomDistance = UnityEngine.Random.Range(0.0f, 1.0f);
+                Vector3 randomDirectionToSpawn = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), 0.0f, UnityEngine.Random.Range(-1.0f, 1.0f));
+                float randomDistance = UnityEngine.Random.Range(1.0f, 3.0f);
                 Vector3 facingDIrection = -randomDirectionToSpawn.normalized;
-                randomDirectionToSpawn = randomDirectionToSpawn.normalized * 2;
+                randomDirectionToSpawn = (randomDirectionToSpawn.normalized * randomDistance) + (new Vector3(0, UnityEngine.Random.Range(0.0f, 1.0f)));
                 temp.transform.position = randomDirectionToSpawn;
                 temp.transform.LookAt(new Vector3(0, 0, 0));
                 temp.GetComponent<Target>().OnDeath += HandleTargetDestroyed;
