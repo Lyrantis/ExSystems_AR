@@ -7,6 +7,7 @@ public class ScoreSystem : MonoBehaviour
 {
     private int score;
     public TMP_Text scoreText;
+    public TMP_Text gameOverScoreText;
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class ScoreSystem : MonoBehaviour
     public void EndGame()
     {
         scoreText.gameObject.SetActive(false);
+        gameOverScoreText.text = "Score: " + score.ToString();
     }
 }
 
